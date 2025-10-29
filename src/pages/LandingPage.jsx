@@ -7,7 +7,7 @@ import TruBlock from '../components/TruBlock';
 import LatestArticles from '../components/LatestArticles';
 import RadiationExposur from '../components/RadiationExposur';
 import Integration from '../components/Integration';
-import RiskPart from '../components/RiskPart';
+import BeforeAfter from '../helper/BeforeAfter';
 
 const LandingPage = () => {
   return (
@@ -15,7 +15,7 @@ const LandingPage = () => {
       <Navbar/>
       <Banner/>
       <RadiationExposur/>
-      <RiskPart/>
+      <BeforeAfter/>
       <TruBlock/>
       <Integration/>
       <Graph/>

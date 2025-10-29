@@ -77,11 +77,11 @@ const Header = () => {
             Reduce Dose up to 84%*
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6 items-center">
+          <div className="flex  justify-center lg:justify-start gap-4 sm:gap-6 items-center">
             <button className="bg-[#3783CA] text-white px-6 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#2e6cab] transition">
               Learn More
             </button>
-            <button className="text-gray-800 flex items-center gap-2 pb-20 lg:pb-0 font-semibold">
+            <button className="text-gray-800 flex items-center gap-2 font-semibold">
               Watch Video{" "}
               <img className="w-4 h-4" src={play_icon} alt="play icon" />
             </button>

@@ -4,9 +4,9 @@ import body from '../assets/body.png'
 
 const RadiationExposur = () => {
   return (
-    <section className="relative flex flex-col mb-80 md:mb-[500px]">
-      {/* Blue Box aligned to left side (unchanged for desktop) */}
-      <div className="relative w-full md:w-[70%] h-auto md:h-[850px] rounded-none md:rounded-r-4xl flex flex-col justify-center items-center md:items-start bg-[#EBF6FF] px-4 md:pl-16 py-12 md:py-0 text-center md:text-left">
+    <section className="relative flex flex-col lg:mb-[350px]">
+      {/* Blue Box */}
+      <div className="relative w-full md:w-[70%] h-auto md:h-[850px] rounded-none rounded-tr-[150px] flex flex-col justify-center items-center md:items-start bg-[#EBF6FF] px-4 md:pl-16 py-12 md:py-0 text-center md:text-left">
         <div className="w-full md:w-[60%] mx-auto md:mx-0">
           <h2 className="text-[32px] sm:text-[40px] md:text-[52px] leading-tight md:leading-[68px] font-bold pb-6 md:pb-8">
             Reducing Radiation Exposure
@@ -27,8 +27,8 @@ const RadiationExposur = () => {
       <div
         className="
           flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8
-          w-full md:w-auto
-          md:absolute md:bottom-[-200px] md:left-1/2 md:-translate-x-1/2
+          w-[90%] mx-auto md:w-auto
+          md:absolute md:bottom-[-300px] md:left-1/2 md:-translate-x-1/2
           mt-0 md:mt-0
         "
       >
