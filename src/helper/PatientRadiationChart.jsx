@@ -19,13 +19,13 @@ const data = [
 
 const PatientRadiationChart = () => {
   return (
-    <section className="bg-[#EAF3FF] py-12 px-6 flex flex-col items-center">
+    <section className="bg-[#EAF3FF] py-10 sm:py-14 px-4 sm:px-8 flex flex-col items-center">
       {/* ---------- HEADING ---------- */}
-      <div className="text-center mb-8">
-        <h2 className="text-lg font-semibold text-gray-700">
+      <div className="text-center mb-8 px-2">
+        <h2 className="text-sm sm:text-lg font-semibold text-gray-700">
           Patient Radiation Dose Comparison of
         </h2>
-        <h1 className="text-xl font-bold text-gray-900">
+        <h1 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 mt-1">
           Conventional Image Guided System vs.{" "}
           <span className="text-[#0072CE]">
             AI Image Guided System w/ FluoroShield™
@@ -34,28 +34,29 @@ const PatientRadiationChart = () => {
       </div>
 
       {/* ---------- CHART ---------- */}
-      <div className="w-full max-w-5xl h-[420px] bg-[#EBF6FF] rounded-xl shadow-md p-6">
+      <div className="w-full max-w-6xl h-[300px] sm:h-[420px] bg-[#EBF6FF] rounded-xl shadow-md p-4 sm:p-6">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
-            barGap={10}
+            margin={{ top: 20, right: 20, left: 0, bottom: 40 }}
+            barGap={8}
             barCategoryGap="25%"
           >
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis
               dataKey="name"
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 10, fontWeight: 500 }}
               interval={0}
               dy={10}
             />
             <YAxis
+              tick={{ fontSize: 10 }}
               label={{
                 value:
                   "Average Radiation Exposure per Procedure (Effective Dose, mSv)",
                 angle: -90,
                 position: "insideLeft",
-                fontSize: 12,
+                fontSize: 10,
               }}
             />
             <Tooltip />
@@ -64,16 +65,14 @@ const PatientRadiationChart = () => {
             <Bar
               dataKey="Conventional"
               fill="#1E1E1E"
-              barSize={45}
+              barSize={30}
               radius={[6, 6, 0, 0]}
-              stackId="a"
             />
             <Bar
               dataKey="AI"
               fill="#4DA3FF"
-              barSize={45}
+              barSize={30}
               radius={[6, 6, 0, 0]}
-              stackId="b"
             />
 
             {/* ---------- LINES ---------- */}
@@ -82,7 +81,7 @@ const PatientRadiationChart = () => {
               dataKey="Conventional"
               stroke="#999999"
               strokeWidth={2}
-              dot={{ r: 5, fill: "#1E1E1E" }}
+              dot={{ r: 4, fill: "#1E1E1E" }}
               isAnimationActive={true}
             />
             <Line
@@ -90,22 +89,21 @@ const PatientRadiationChart = () => {
               dataKey="AI"
               stroke="#4DA3FF"
               strokeWidth={2}
-              dot={{ r: 5, fill: "#4DA3FF" }}
+              dot={{ r: 4, fill: "#4DA3FF" }}
               isAnimationActive={true}
             />
 
             {/* ---------- LEGEND ---------- */}
             <Legend
               verticalAlign="bottom"
-              wrapperStyle={{ paddingTop: 20 }}
               content={() => (
-                <div className="flex justify-center gap-8 text-sm mt-4">
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 text-xs sm:text-sm mt-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-[#1E1E1E] rounded-sm"></div>
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#1E1E1E] rounded-sm"></div>
                     <span>Conventional System</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-[#4DA3FF] rounded-sm"></div>
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-[#4DA3FF] rounded-sm"></div>
                     <span>AI System</span>
                   </div>
                 </div>
@@ -116,7 +114,7 @@ const PatientRadiationChart = () => {
       </div>
 
       {/* ---------- FOOTNOTE ---------- */}
-      <p className="text-sm text-center text-gray-700 mt-6 max-w-3xl leading-relaxed">
+      <p className="text-xs sm:text-sm text-center text-gray-700 mt-6 max-w-3xl leading-relaxed px-2">
         <strong>**Assuming 61.8% reduction in radiation to patient</strong> as
         demonstrated in study by Bang et al., (2020)
         <br />
